@@ -3,11 +3,20 @@ components:
   name: navbar_links
   properties: {}
   type: FlowPanel
-- components: []
+- components:
+  - layout_properties: {grid_position: 'KZJKYG,HAPRKY'}
+    name: label_1
+    properties: {text: Innovia Solidworks PCs}
+    type: Label
   layout_properties: {slot: title}
   name: content_panel
   properties: {col_widths: '{}'}
   type: ColumnPanel
+- data_bindings: []
+  layout_properties: {slot: default}
+  name: PC_list
+  properties: {item_template: Form1.ItemTemplate2}
+  type: RepeatingPanel
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
