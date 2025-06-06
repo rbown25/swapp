@@ -8,6 +8,10 @@ components:
     name: label_1
     properties: {text: Innovia Solidworks PCs}
     type: Label
+  - layout_properties: {grid_position: 'QNISDO,TZPIVH'}
+    name: joke_text
+    properties: {font_size: 12, italic: true}
+    type: Label
   layout_properties: {slot: title}
   name: content_panel
   properties: {col_widths: '{}'}
