@@ -49,9 +49,6 @@ class ItemTemplate2(ItemTemplate2Template):
       else:
         #Used by another
         self.button.text="Boot"
-        self.stop_button.visible=False
-        self.boot_button.visible=True
-        self.use_button.visible=False
 
 
   def button_click(self, **event_args):
