@@ -7,4 +7,5 @@ unique_ids:
     Form1.ItemTemplate2: '1749194965883947070066099.3657'
   modules: {}
   scripts: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1751280847695184116479456.8243'
