@@ -18,7 +18,7 @@ components:
       type: Label
     - layout_properties: {}
       name: hours_logoff
-      properties: {font_size: 12, text: '3'}
+      properties: {bold: false, font_size: 12, foreground: 'theme:Primary', text: '3'}
       type: TextBox
     name: flow_panel_1
     properties: {}
