@@ -25,4 +25,7 @@ class Form1(Form1Template):
                                 "User-Agent": "In-house app, rich.bown@innoviatech.com",
                                 "Accept": "application/json"
                               })
-    self.joke_text.text=resp['joke']
+    if 'joke' in resp:
+      self.joke_text.text=resp['joke']
+    else:
+      self.joke_text.text="This is no joke!"
