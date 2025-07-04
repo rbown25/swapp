@@ -27,7 +27,12 @@ components:
   name: linear_panel_2
   properties: {}
   type: LinearPanel
-- layout_properties: {slot: nav-right}
+- components:
+  - layout_properties: {grid_position: 'WABDRG,ZBZWSF'}
+    name: link_1
+    properties: {icon: 'fa:github', url: 'https://github.com/rbown25/swapp'}
+    type: Link
+  layout_properties: {slot: nav-right}
   name: column_panel_1
   properties: {}
   type: ColumnPanel
