@@ -68,5 +68,9 @@ class ItemTemplate2(ItemTemplate2Template):
         self.set_state('None')
     else:
       print("unknown button:"+self.button.text)
+
+  def timer_1_tick(self, **event_args):
+    """This method is called Every [interval] seconds. Does not trigger if [interval] is 0."""
+    self.setup_the_row()
         
 
