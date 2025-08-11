@@ -11,6 +11,9 @@ TZ = datetime.timezone(datetime.timedelta(hours=0, minutes=0))
 
 class ItemTemplate2(ItemTemplate2Template):
   def __init__(self, **properties):
+    self.setup_the_row(**properties)
+
+  def setup_the_row(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
@@ -28,7 +31,6 @@ class ItemTemplate2(ItemTemplate2Template):
       self.set_state('None')
     else:
       pass #don't logoff
-
 
   def set_state(self, name, start=False):
     '''Set the datbase and the form up for a particular named user (or "None" if no user)'''
