@@ -11,13 +11,14 @@ TZ = datetime.timezone(datetime.timedelta(hours=0, minutes=0))
 
 class ItemTemplate2(ItemTemplate2Template):
   def __init__(self, **properties):
+    # Any code you write here will run before the form opens.
+    # Set Form properties and Data Bindings.
+    self.init_components(**properties)
     self.setup_the_row(**properties)
 
   def setup_the_row(self, **properties):
-    # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-
-    # Any code you write here will run before the form opens.
+    self.refresh_data_bindings()
+    
     self.set_state(self.item['Current_user'],True)
     if self.item['session_length'] is  None:
       self.item['session_length']=0
