@@ -34,7 +34,7 @@ class ItemTemplate2(ItemTemplate2Template):
       pass #don't logoff
 
   def set_state(self, name, start=False):
-    '''Set the datbase and the form up for a particular named user (or "None" if no user)'''
+    '''Set the database and the form up for a particular named user (or "None" if no user)'''
     self.item['Current_user']=name
 
     if not start and name!='None':
