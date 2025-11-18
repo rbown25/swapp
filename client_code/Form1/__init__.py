@@ -18,6 +18,7 @@ class Form1(Form1Template):
     self.PC_list.items = app_tables.pcs.search()
 
     #Joke
+    '''
     resp = anvil.http.request(url="https://icanhazdadjoke.com/",
                               method="GET",
                               json=True,
@@ -25,6 +26,8 @@ class Form1(Form1Template):
                                 "User-Agent": "In-house app, rich.bown@innoviatech.com",
                                 "Accept": "application/json"
                               })
+    '''
+    resp="No"
     if 'joke' in resp:
       self.joke_text.text=resp['joke']
     else:
