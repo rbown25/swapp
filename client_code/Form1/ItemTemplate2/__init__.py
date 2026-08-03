@@ -7,7 +7,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import datetime
 
-TZ = datetime.timezone(datetime.timedelta(hours=0, minutes=0))
+#TZ = datetime.timezone(datetime.timedelta(hours=0, minutes=0))
+TZ = datetime.timezone.utc
 
 class ItemTemplate2(ItemTemplate2Template):
   def __init__(self, **properties):
@@ -23,6 +24,10 @@ class ItemTemplate2(ItemTemplate2Template):
     if self.item['session_length'] is  None:
       self.item['session_length']=0
 
+    # If nobody's using it, there's no session to expire
+    if self.item['Current_user'] == 'None' or self.item['sesssion_start'] is None:
+      return
+
     #Check auto logoff times:
     logofftime=self.item['sesssion_start']+ datetime.timedelta(0,3600*self.item['session_length'])
     nowtime=datetime.datetime.now(TZ)
@@ -30,8 +35,6 @@ class ItemTemplate2(ItemTemplate2Template):
     #print(logofftime)
     if logofftime<nowtime:
       self.set_state('None')
-    else:
-      pass #don't logoff
 
   def set_state(self, name, start=False):
     '''Set the database and the form up for a particular named user (or "None" if no user)'''

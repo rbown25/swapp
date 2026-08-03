@@ -6,6 +6,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import csv
+import datetime
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -19,6 +20,8 @@ import csv
 #   print("Hello, " + name + "!")
 #   return 42
 #
+TZ = datetime.timezone.utc
+
 @anvil.server.callable
 def import_new_users():
   '''This function will import any new users in the csv file "innovians.csv" to the Users table.
@@ -26,7 +29,7 @@ def import_new_users():
   anvil.server.call('import_new_users')'''
   all_staff=[]
   current_staff=[]
-  file = open(data_files['innovians.csv'], "rU")
+  file = open(data_files['innovians.csv'], "r")
   reader = csv.reader(file, delimiter=',')
   for row in reader:
     all_staff.append(row[0])
